@@ -7,11 +7,7 @@ const nextConfig = {
             pathname: '**',
         }, ],
     },
-    experimental: {
-        serverActions: {
-            disableCache: true, // Désactive le cache des Server Actions
-        }
-    }
+
 };
 
 export default nextConfig;
