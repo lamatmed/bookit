@@ -46,7 +46,7 @@ async function bookRoom(previousState, formData) {
 
         if (!isAvailable) {
             return {
-                error: 'This room is already booked for the selected time',
+                error: "Cette Salle est déjà réservée pour l 'heure sélectionnée"
             };
         }
 
@@ -65,8 +65,10 @@ async function bookRoom(previousState, formData) {
             bookingData
         );
 
+
         // Revalidate cache
         revalidatePath('/bookings', 'layout');
+
 
         return {
             success: true,

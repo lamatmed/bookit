@@ -22,7 +22,25 @@ const BookingForm = ({ room }) => {
     }
   }, [state]);
   const handleSubmit = async (e) => {
+   
     setIsLoading(true); // 🔹 Activer le chargement
+     // Récupérer les valeurs des champs
+     const checkInDate = e.target.check_in_date.value;
+     const checkInTime = e.target.check_in_time.value;
+     const checkOutDate = e.target.check_out_date.value;
+     const checkOutTime = e.target.check_out_time.value;
+ 
+     // Convertir en objets Date pour la comparaison
+     const startDateTime = new Date(`${checkInDate}T${checkInTime}`);
+     const endDateTime = new Date(`${checkOutDate}T${checkOutTime}`);
+ 
+     if (startDateTime >= endDateTime) {
+       toast.error("La date et l'heure de début doivent être avant celles de fin !");
+       setIsLoading(false);
+       return;
+     }
+ 
+    
    
   };
   return (
@@ -36,7 +54,7 @@ const BookingForm = ({ room }) => {
               htmlFor='check_in_date'
               className='block text-sm font-medium text-gray-700'
             >
-              Date de début
+              Date de début réservation
             </label>
             <input
               type='date'
@@ -66,7 +84,7 @@ const BookingForm = ({ room }) => {
               htmlFor='check_out_date'
               className='block text-sm font-medium text-gray-700'
             >
-                 Date de fin
+                 Date de fin réservation
             </label>
             <input
               type='date'

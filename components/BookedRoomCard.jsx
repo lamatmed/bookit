@@ -9,7 +9,7 @@ const BookedRoomCard = ({ booking }) => {
 
     // Get month
     const options = { month: 'short' };
-    const month = date.toLocaleString('en-US', options, { timeZone: 'UTC' });
+    const month = date.toLocaleString('fr-FR', options, { timeZone: 'UTC' });
 
     // Get day
     const day = date.getUTCDate();
@@ -18,11 +18,11 @@ const BookedRoomCard = ({ booking }) => {
     const timeOptions = {
       hour: 'numeric',
       minute: 'numeric',
-      hour12: true,
+      hour24: true,
       timeZone: 'UTC',
     };
 
-    const time = date.toLocaleString('en-US', timeOptions);
+    const time = date.toLocaleString('fr-FR', timeOptions);
 
     // Final formatted string
     return `${month} ${day} at ${time}`;
