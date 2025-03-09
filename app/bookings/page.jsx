@@ -1,12 +1,24 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Heading from '@/components/Heading';
 import BookedRoomCard from '@/components/BookedRoomCard';
 import getMyBookings from '../actions/getMyBookings';
+import Loader from '@/components/Loader';
 
-const BookingsPage = async () => {
-  const bookings = await getMyBookings(); // Attente des réservations
+const BookingsPage = () => {
+  const [bookings, setBookings] = useState(null);
+
+  useEffect(() => {
+    const fetchBookings = async () => {
+      const data = await getMyBookings();
+      setBookings(data);
+    };
+    fetchBookings();
+  }, []);
 
   if (!bookings) {
-    return <p className="text-center text-gray-500">Chargement des réservations...</p>;
+    return <Loader/>
   }
 
   return (

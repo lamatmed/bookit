@@ -24,10 +24,10 @@ const RoomPage = async ({ params }) => {
   return (
     <>
       <Heading title={room.name} />
-      <div className='p-6 bg-white rounded-lg shadow'>
+      <div className='max-w-md p-4 bg-white rounded-lg shadow sm:max-w-2xl'>
         <Link
           href='/'
-          className='flex items-center mb-4 text-gray-600 hover:text-gray-800'
+         className='flex items-center mb-4 text-sm text-gray-600 hover:text-gray-800'
         >
           <FaChevronLeft className='inline mr-1' />
           <span className='ml-2'>Retour aux salles</span>
@@ -39,13 +39,13 @@ const RoomPage = async ({ params }) => {
             alt={room.name}
             width={400}
             height={100}
-            className='object-cover w-full h-64 rounded-lg sm:w-1/3'
+            className='object-cover w-full h-auto rounded-lg sm:w-1/3'
           />
 
           <div className='mt-4 sm:mt-0 sm:flex-1'>
-            <p className='mb-4 text-gray-600'>{room.description}</p>
+            <p className='mb-4 text-sm text-gray-700'>{room.description}</p>
 
-            <ul className='space-y-2'>
+            <ul  className='space-y-2 text-sm'>
               <li>
                 <span className='font-semibold text-gray-800'>Superficie :</span>{' '}
                 {room.sqft} m²
