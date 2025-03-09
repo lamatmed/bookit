@@ -14,11 +14,15 @@ const BookingsPage = () => {
       const data = await getMyBookings();
       setBookings(data);
     };
+    
     fetchBookings();
+    const interval = setInterval(fetchBookings, 10000); // Rafraîchit toutes les 10 secondes
+
+    return () => clearInterval(interval);
   }, []);
 
   if (!bookings) {
-    return <Loader/>
+    return <Loader/>;
   }
 
   return (
