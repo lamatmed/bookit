@@ -20,7 +20,7 @@ async function getMyBookings() {
 
         if (!user) {
             return {
-                error: 'You must be logged in to view bookings',
+                error: 'Vous devez être connecté pour voir les réservations',
             };
         }
 
@@ -34,7 +34,7 @@ async function getMyBookings() {
     } catch (error) {
         console.log('Failed to get user bookings', error);
         return {
-            error: 'Failed to get bookings',
+            error: "Impossible d'obtenir des réservations",
         };
     }
 }

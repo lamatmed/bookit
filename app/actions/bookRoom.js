@@ -22,7 +22,7 @@ async function bookRoom(previousState, formData) {
 
         if (!user) {
             return {
-                error: 'You must be logged in to book a room',
+                error: 'Vous devez être connecté pour réserver une chambre',
             };
         }
 
@@ -76,7 +76,7 @@ async function bookRoom(previousState, formData) {
     } catch (error) {
         console.log('Failed to book room', error);
         return {
-            error: 'Something went wrong booking the room',
+            error: "Quelque chose s'est mal passé en réservant la chambre"
         };
     }
 }

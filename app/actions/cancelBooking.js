@@ -20,7 +20,7 @@ async function cancelBooking(bookingId) {
 
         if (!user) {
             return {
-                error: 'You must be logged in to cancel a booking',
+                error: 'Vous devez être connecté pour annuler une réservation',
             };
         }
 
@@ -34,7 +34,7 @@ async function cancelBooking(bookingId) {
         // Check if booking belongs to current user
         if (booking.user_id !== user.id) {
             return {
-                error: 'You are not authorized to cancel this booking',
+                error: "Vous n'êtes pas autorisée à annuler cette réservation",
             };
         }
 
@@ -53,7 +53,7 @@ async function cancelBooking(bookingId) {
     } catch (error) {
         console.log('Failed to cancel booking', error);
         return {
-            error: 'Failed to cancel booking',
+            error: "Échec de l'annulation de la réservation",
         };
     }
 }

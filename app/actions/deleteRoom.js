@@ -53,7 +53,7 @@ async function deleteRoom(roomId) {
     } catch (error) {
         console.log('Failed to delete room', error);
         return {
-            error: 'Failed to delete room',
+            error: 'Impossible de supprimer la chambre',
         };
     }
 }

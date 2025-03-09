@@ -56,7 +56,7 @@ async function checkRoomAvailability(roomId, checkIn, checkOut) {
     } catch (error) {
         console.log('Failed to check availability', error);
         return {
-            error: 'Failed to check availability',
+            error: 'Echec de la vérification de la disponibilité',
         };
     }
 }

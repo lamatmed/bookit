@@ -8,7 +8,7 @@ async function destroySession() {
 
     if (!sessionCookie) {
         return {
-            error: 'No session cookie found',
+            error: "Aucun cookie de session n'a été trouvé",
         };
     }
 
@@ -26,7 +26,7 @@ async function destroySession() {
         };
     } catch (error) {
         return {
-            error: 'Error deleting session',
+            error: 'Erreur lors de la suppression de la session',
         };
     }
 }

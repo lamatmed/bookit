@@ -8,7 +8,7 @@ async function createSession(previousState, formData) {
 
     if (!email || !password) {
         return {
-            error: 'Please fill out all fields',
+            error: 'Veuillez remplir tous les champs',
         };
     }
 
@@ -34,7 +34,7 @@ async function createSession(previousState, formData) {
     } catch (error) {
         console.log('Authentication Error: ', error);
         return {
-            error: 'Invalid Credentials',
+            error: "Informations d 'identification non valides ",
         };
     }
 }
